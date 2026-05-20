@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Relation Ledger</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <section class="composer">
+        <p class="kicker">RELATION OS</p>
+        <h1>把这次事件写下来</h1>
+        <p class="lead">你只管写。标签、金额、关联、标题都由 agent 自动完成。</p>
+        <form id="eventForm" class="event-form">
+          <textarea
+            name="content"
+            rows="14"
+            placeholder="例如：昨天因为纪念日吃饭和转账问题吵架。我觉得我付出更多，对方觉得我在算账。后来冷战到今天。"
+            required
+          ></textarea>
+          <button type="submit" class="primary">记录并分析</button>
+        </form>
+        <div class="providers">
+          <span id="analysisProvider">分析: 待命</span>
+          <span id="enrichProvider">抽取: 待命</span>
+        </div>
+      </section>
+
+      <section class="board">
+        <div id="statsStrip" class="stats"></div>
+        <section id="analysisPanel" class="analysis">
+          <h2>等待第一条记录</h2>
+          <p>提交后这里会出现 AI 对事件的结构化拆解和建议。</p>
+        </section>
+        <div class="timeline-head">
+          <h2>时间线</h2>
+          <button id="refreshButton" class="ghost" type="button">刷新</button>
+        </div>
+        <section id="timeline" class="timeline"></section>
+      </section>
+    </main>
+    <script src="/app.js"></script>
+  </body>
+</html>
+
